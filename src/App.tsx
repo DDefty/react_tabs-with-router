@@ -1,12 +1,11 @@
 import 'bulma/css/bulma.css';
 import '@fortawesome/fontawesome-free/css/all.css';
 import './App.scss';
-import { Routes, Route, Link, useLocation, Navigate } from "react-router-dom";
+import { Routes, Route, Link, useLocation, Navigate } from 'react-router-dom';
 import HomePage from './pages/HomePage/HomePage';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 import TabsPage from './pages/TabsPage/TabsPage';
 import { useState } from 'react';
-
 
 export const tabs = [
   { id: 'tab-1', title: 'Tab 1', content: 'Some text 1' },
@@ -27,10 +26,24 @@ export const App = () => {
       >
         <div className="container">
           <div className="navbar-brand">
-            <Link to="/" className={location.pathname === "/" ? "navbar-item is-active" : "navbar-item"}>
+            <Link
+              to="/"
+              className={
+                location.pathname === '/'
+                  ? 'navbar-item is-active'
+                  : 'navbar-item'
+              }
+            >
               Home
             </Link>
-            <Link to="/tabs" className={location.pathname.startsWith("/tabs") ? "navbar-item is-active" : "navbar-item"}>
+            <Link
+              to="/tabs"
+              className={
+                location.pathname.startsWith('/tabs')
+                  ? 'navbar-item is-active'
+                  : 'navbar-item'
+              }
+            >
               Tabs
             </Link>
           </div>
@@ -48,4 +61,4 @@ export const App = () => {
       </Routes>
     </>
   );
-}
+};
